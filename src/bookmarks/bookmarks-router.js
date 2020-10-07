@@ -16,7 +16,7 @@ bookmarkRouter
   })
   .post(bodyParser, (req, res) => {
     // move implementation logic into here
-    const { title, description, URL, rating} = req.body;
+    const { title, description, url, rating} = req.body;
 
 
     if (!title) {
@@ -34,11 +34,11 @@ bookmarkRouter
         .send('Need a Description')
     }
   
-    if(!isWebUri(URL)){
-      logger.error(`URL Required`)
+    if(!isWebUri(url)){
+      logger.error(`Url Required`)
       return res
       .status(400)
-        .send('Invalid URL')
+        .send('Invalid Url')
     }
   
     if (!Number.isInteger(rating) || rating < 0 || rating > 5) {
@@ -55,7 +55,7 @@ bookmarkRouter
       id,
       title,
       description,
-      URL,
+      url,
       rating,
     };
   
