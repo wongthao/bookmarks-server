@@ -15,4 +15,4 @@ if (NODE_ENV !== 'production') {
   }))
 }
 
-module.exports = loggerpom
+module.exports = logger
