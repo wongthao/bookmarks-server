@@ -5,9 +5,9 @@ const BookmarksService = {
     getAllBookmarks(knex) {
           return knex.select('*').from('bookmarks_table')
     },
-    insertArticle(knex, newArticle) {
+    insertBookmark(knex, newBookmark) {
          return knex
-           .insert(newArticle)
+           .insert(newBookmark)
            .into('bookmarks_table')
            .returning('*')
            .then(rows => {
@@ -20,7 +20,7 @@ const BookmarksService = {
 
      
      // the delete method uses the knex instance to access the blogful_articles database.(which has the 3 articles) Then it finds where the id is located and deletes it. 
-    deleteArticle(knex, id) {
+    deleteBookmark(knex, id) {
        return knex('bookmarks_table')
          .where({ id })
          .delete()
