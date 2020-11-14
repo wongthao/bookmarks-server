@@ -27,7 +27,7 @@ const BookmarksService = {
     }, 
 
 
-    updateArticle(knex, id, newArticleFields) {
+    updateBookmark(knex, id, newArticleFields) {
             return knex('bookmarks_table')
               .where({ id })
               .update(newArticleFields)
